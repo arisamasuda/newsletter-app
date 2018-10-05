@@ -1,0 +1,16 @@
+<div class="login-wrapper">
+  <form novalidate>
+    <div class="login">
+      <div class="user-id">
+        <p>ユーザーID</p>
+        <input type="text" name="userId" placeholder="*****@goalist.co.jp" autocomplete="off" #inputUserId (keyup.enter) = "_onClickLogin(inputUserId.value, inputPassword.value)"/>
+      </div>
+      <div class="password">
+        <p>パスワード</p>
+        <input type="password" name="password" autocomplete="off" #inputPassword (keyup.enter) = "_onClickLogin(inputUserId.value, inputPassword.value)"/>
+      </div>
+      <div class="login-button" (click)="_onClickLogin(inputUserId.value, inputPassword.value)">ログイン</div>
+      <div class="login-error">{{_errorMessage}}</div>
+    </div>
+  </form>
+</div>

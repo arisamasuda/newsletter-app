@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="header-container">
+    <div class="header__tab">
+      <ul>
+        <li class="header__tab--member selected"id="header-tab-member" [class.selected]="urlMember">
+          <a routerLink="/member-list"><img src="/assets/img/member-list.png">メンバー一覧</a>
+        </li>
+        <li class="header__tab--question" id="header-tab-question" [class.selected]="urlQuestion">
+          <a routerLink="/question-list"><img src="/assets/img/question-list.png">アンケート一覧</a>
+        </li>
+      </ul>
+    </div>
+    <div class="header-right">
+      <div class="header__search">
+        <input type="text" placeholder="メンバー検索" class="header__list--member-search" #searchBox (keyup)="_onSearchMember(searchBox.value)">
+        <img src="/assets/img/search-icon.png" class="search-icon">
+        <ul class="member-suggestion">
+          <li *ngFor="let member of _searchMemberList" (click)="_changeView()"><a class="result-each__link" routerLink="/member-each/{{member.id}}"><img src="{{member.imageUrl}}">{{member.name}}</a></li>
+        </ul>
+      </div>
+      <div class="header-login-user">
+        <img src="{{loginUser?.imageUrl}}" (click)="_onEditProfile()">
+      </div>
+    </div>
+  </div>
+</div>

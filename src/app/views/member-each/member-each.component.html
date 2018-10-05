@@ -1,0 +1,41 @@
+<app-header (event)="_changeView()"></app-header>
+
+<div class="personal-contents">
+
+  <div class="personal-contents__profile">
+    <div class="profile-icon"><img src="{{member?.imageUrl}}"></div>
+    <div class="profile-detail">
+      <p class="profile-detail-name">{{member?.name}}</p>
+      <p class="profile-detail-team">{{member?.job}}　{{member?.joinYear}}年入社</p>
+      <p class="profile-detail-birth">誕生日：{{member?.birthday}}</p>
+      <p class="profile-detail-message">一言：{{member?.comment}}</p>
+      <p class="profile-detail-edit" (click)="_onEditProfile()" *ngIf="data.targetUserId === userId">プロフィールを編集</p>
+    </div>
+
+    <div class="profile-chat">
+      <form>
+        <input type="text" placeholder="コメント入力">
+      </form>
+      <p>この機能は<br>まだ使えません</p>
+    </div>
+  </div>
+
+  <div class="personal-contents__answers">
+
+    <div *ngFor="let question of _qtUnitList">
+      <div class="answer" *ngIf="question['answers'].length !== 0">
+        <div class="answer__title">
+          <p>{{question['content']}}</p>
+        </div>
+        <div class="answer__detail">
+          <p class="answer__detail-main">{{question['answers'][0]}}</p>
+          <p class="answer__detail-sub">{{question['answers'][1]}}</p>
+        </div>
+        <div class="answer__nice">
+          <img src="{{question['imgPath']}}" (click)="_onNiceCount(question)">
+          <p>{{question['goodCount']}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

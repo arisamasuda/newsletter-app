@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<div class="top-list-wrapper">
+
+  <div class="filter">
+    <p>並び替え</p>
+      <select #inputFilter>
+        <option value="job">職種</option>
+        <option value="joinYear">入社年</option>
+        <option value="birthYear">生まれ年</option>
+      </select>
+      <div class="filter-button" (click)="_onClickFilter(inputFilter.value)">決定</div>
+  </div>
+
+  <!--職種別メンバー一覧-->
+  <div class="member-list" id="member-list-job">
+    <div class="member-list-category" *ngFor="let team of _jobList">
+      <div class="member-list__title">
+        <p>{{team}}</p>
+      </div>
+      <div class="member-list__each">
+        <div class="results" *ngFor = "let member of _memberList">
+          <div class="result-each" *ngIf="member.job === team" >
+            <a class="result-each__link" routerLink="/member-each/{{member.id}}">
+              <img src="{{member.imageUrl}}">
+              <p class="member-name">{{member.name}}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--入社年別メンバー一覧-->
+  <div class="member-list" id="member-list-joinYear">
+    <div class="member-list-category" *ngFor="let joinYear of _joinYearList">
+      <div class="member-list__title">
+        <p>{{joinYear}}</p>
+      </div>
+      <div class="member-list__each">
+        <div class="results" *ngFor = "let member of _memberList">
+          <div class="result-each" *ngIf="member.joinYear === joinYear">
+            <a class="result-each__link" routerLink="/member-each/{{member.id}}">
+              <img src="{{member.imageUrl}}">
+              <p class="member-name">{{member.name}}</p>
+              <p class="member-job">{{member.job}}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--生まれ年別メンバー一覧-->
+  <div class="member-list" id="member-list-birthYear">
+    <div class="member-list-category" *ngFor="let birthYear of _birthYearList">
+      <div class="member-list__title">
+        <p>{{birthYear}}</p>
+      </div>
+      <div class="member-list__each">
+        <div class="results" *ngFor = "let member of _memberList">
+          <div class="result-each" *ngIf="member.birthYear === birthYear">
+            <a class="result-each__link" routerLink="/member-each/{{member.id}}">
+              <img src="{{member.imageUrl}}">
+              <p class="member-name">{{member.name}}</p>
+              <p class="member-job">{{member.job}}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="wrapper">
+  <div class="profile">
+    <form #profileForm="ngForm">
+      <ul class="profile-detail">
+          <li class="profile-detail-img">
+            <p>アイコン画像</p>
+            <img src="{{loginUser?.imageUrl}}">
+          </li>
+          <li class="profile-detail-name">
+            <p>名前：{{loginUser?.name}}</p>
+            <!--<input type="text" value="{{loginUser?.name}}">-->
+          </li>
+          <li class="profile-detail-birth">
+            <p>生年月日：{{loginUser?.birthday}}</p>
+            <!--<input type="text" value="{{loginUser?.birthday}}">-->
+          </li>
+          <li>
+            <p>職種：{{loginUser?.job}}</p>
+            <!--<input type="text" value="{{loginUser?.job}}">-->
+          </li>
+          <li class="profile-detail-comment">
+            <p>一言（50文字以内）</p>
+            <input class="profile-comment" type="text" value="{{loginUser?.comment}}" #inputComment maxlength="50">
+          </li>
+        </ul>
+      <div class="buttons">
+        <button type="button" class="button button-back" (click)="_goBack()">戻る</button>
+        <button type="button" class="button button-save" (click)="_editComment(inputComment.value)" [disabled]="!profileForm.dirty">保存する</button>
+      </div>
+      <hr>
+      <div class="password">
+        <p>パスワードの変更</p>
+        <input class="password-input" type="text" #inputPassword minlength="4" maxlength="15">
+        <button type="button" class="button button-password-change" (click)="_changePassword(inputPassword.value)" [disabled]="inputPassword.dirty">変更する</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+　

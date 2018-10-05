@@ -1,0 +1,136 @@
+.personal-contents {
+  width: 1020px;
+  padding: 0 30px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &__profile {
+    width: 200px;
+    .profile-icon {
+      text-align: center;
+      margin-bottom: 10px;
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .profile-detail {
+      margin-bottom: 30px;
+      font-size: 12px;
+      &-name {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      &-team {
+        font-size: 12px;
+      }
+      &-birth {
+        font-size: 12px;
+      }
+      &-message {
+        font-size: 12px;
+      }
+      &-edit {
+        text-decoration: underline;
+        font-size: 12px;
+        text-align: right;
+        margin-top: 10px;
+        opacity: 0.6;
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+    .profile-chat {
+      height: 400px;
+      width: 200px;
+      background-color: #EDF2F2;
+      input {
+        height: 30px;
+        width: 160px;
+        padding: 0 10px;
+        border: 0;
+        margin: 10px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        &:focus {
+          border: #39606B 1px solid;
+          outline: 0;
+        }
+
+        &::placeholder {
+          color: #9FE1D6;
+        }
+      }
+      p {
+        margin-top: 150px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__answers {
+    width: 760px;
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .answer {
+      min-height: 130px;
+      min-width: 150px;
+      margin: 5px 0;
+      border: 1px solid #9FE1D6;
+      //background:no-repeat center bottom 15px / 80px auto url("/../assets/img/hukidasi.png");
+      &__title {
+        height: 20px;
+        padding: 5px 10px;
+        background-color: #EDF2F2;
+        p {
+          font-size: 12px;
+        }
+      }
+      &__detail {
+        min-height: 64px;
+        padding: 0 30px;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-main {
+          font-size: 20px;
+        }
+        &-sub {
+          font-size: 12px;
+        }
+      }
+      &__nice {
+        height: 20px;
+        margin: 3px;
+        align-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        img {
+          height: 20px;
+          width: 20px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        p {
+          margin: 0 5px;
+          font-size: 12px;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+}

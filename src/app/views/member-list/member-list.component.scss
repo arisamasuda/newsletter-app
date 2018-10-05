@@ -1,0 +1,110 @@
+// フィルター条件「職種・入社年・年齢」
+.filter {
+  width: 1020px;
+  padding: 0 30px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  p {
+    font-size: 12px;
+    margin-right: 10px;
+    line-height: 2;
+  }
+  select {
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .filter-button {
+    height: 20px;
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 15px;
+    background-color: #9FE1D6;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    &:hover {
+      box-shadow: 1px 1px 1px #39606B;
+      cursor: pointer;
+    }
+  }
+}
+
+// フィルターされたメンバー一覧
+.top-list-wrapper {
+  width: 1080px;
+  margin: auto;
+}
+
+.member-list {
+  &-category {
+    width: 1020px;
+    padding: 0 30px;
+    margin: 0 auto 70px;
+  }
+  &__title {
+    margin-bottom: 50px;
+    position: relative;
+    p {
+      font-size: 20px;
+    }
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      width: 100%;
+      position: absolute;
+      border: #9FE1D6 1px solid;
+      top: 30px;
+    }
+  }
+  &__each {
+    width: 1080px;
+    display: flex;
+    flex-wrap: wrap;
+    .results {
+      text-align: center;
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+    }
+    .result-each {
+      width: 104px;
+      margin: 0 50px 30px;
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+
+        transform: translateY(-5px);
+      }
+    }
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 100px;
+      height: 100px;
+    }
+    .member-name {
+      line-height: 1.2;
+    }
+    .member-job {
+      font-size: 12px;
+    }
+  }
+}
+
+#member-list-joinYear {
+  display: none;
+}
+#member-list-birthYear {
+  display: none;
+}
+

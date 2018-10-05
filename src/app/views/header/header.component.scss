@@ -1,0 +1,124 @@
+.header {
+  width: 100%;
+  height: 40px;
+  min-width: 1080px;
+  background-color: #9FE1D6;
+  &-container {
+    width: 1020px;
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__tab {
+    height: 30px;
+    margin-top: 10px;
+    ul {
+      display: flex;
+    }
+    li {
+      margin-right: 50px;
+      list-style: none;
+      display: flex;
+      filter: brightness(5);
+      font-weight: bold;
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      img {
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      &:hover {
+        filter: brightness(1);
+      }
+      p {
+        height: 20px;
+      }
+      &.selected {
+        filter: brightness(1);
+        &::after {
+          content: '';
+          width: 100%;
+          display: block;
+          position: absolute;
+          bottom: -6px;
+          border-bottom: 2px solid #39606B;
+        }
+      }
+    }
+  }
+  &-right {
+    display: flex;
+  }
+  &__search {
+    margin: 0;
+    position: relative;
+    input {
+      height: 30px;
+      width: 180px;
+      padding: 0 10px;
+      border: 0;
+      margin-top: 5px;
+      border-radius: 15px;
+      font-size: 12px;
+      &:focus {
+        border: #39606B 1px solid;
+        outline: 0;
+      }
+    }
+    .search-icon {
+      height: 20px;
+      opacity: 0.3;
+      position: absolute;
+      top: 10px;
+      left: 175px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .member-suggestion {
+      width: 200px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 1px 6px #39606B;
+      li {
+        padding: 7px 10px;
+        list-style: none;
+        border-radius: 5px;
+        &:hover {
+          background-color: #EDF2F2;
+        }
+        a {
+          text-decoration: none;
+          font-size: 12px;
+        }
+        img {
+          margin-right: 10px;
+          border-radius: 50%;
+          object-fit: cover;
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  &-login-user {
+    margin-left: 20px;
+    margin-top: 5px;
+    display: flex;
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 30px;
+      height: 30px;
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
